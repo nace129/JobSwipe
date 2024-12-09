@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form id="login-form">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+                <div id="username-error" class="error-message"></div>
+            
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <div id="password-error" class="error-message"></div>
+            
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            
+            
+            
+            <div class="sso-buttons">
+                <p>Or log in with:</p>
+                <button class="google-button">Login with Google</button>
+                <button class="linkedin-button">Login with LinkedIn</button>
+                <button class="email-button">Login with Email</button>
+            </div>
+
+            <div class="register-link">
+                <p>Don't have an account? <a href="register.html">Create Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/login.js"></script>
+</body>
+</html>

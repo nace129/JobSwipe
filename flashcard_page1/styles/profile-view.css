@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #D8C3A5, #A48374);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  background: none;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #3A2D28;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #A48374;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #3A2D28;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.card a {
+  color: #A48374;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: #3A2D28;
+  text-decoration: underline;
+}
+
+.edit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #A48374;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit-button:hover {
+  background: #3A2D28;
+}

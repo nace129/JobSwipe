@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h1>Create Account</h1>
+            <form id="register-form">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <div id="email-error" class="error-message"></div>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <small id="password-help" class="help-text">
+                    Password must be at least 8 characters long, include an uppercase letter, a number, and a special character.
+                </small>
+                <div id="password-error" class="error-message"></div>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <div id="confirm-password-error" class="error-message"></div>
+                
+                <button type="submit" class="register-button">Register</button>
+            </form>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Log In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/register.js"></script>
+</body>
+</html>

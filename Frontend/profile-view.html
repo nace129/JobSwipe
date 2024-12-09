@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="styles/profile-view.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Your Profile</h1>
+        <div id="profile-view" class="card"></div>
+        <button id="edit-profile" class="edit-button">Let's Find Jobs</button>
+    </div>
+
+    <script>
+        // Simulate profile data (this could be from a server or static data)
+const profileData = {
+    fullName: "Archon",
+    place: "San Jose",
+    interestedJobs: "Frontend Developer",
+    email: "archon@gmail.com",
+    phone: "123-456-7890",
+    bio: "Passionate about coding and solving problems.",
+    skills: "React, JavaScript",
+    experience: "2 years",
+    linkedin: "https://linkedin.com/in/archon",
+    github: "https://github.com/archon"
+};
+
+// Find the profile container in the HTML
+const profileView = document.getElementById('profile-view');
+
+// Set the profile data dynamically
+profileView.innerHTML = `
+    <p><strong>Full Name:</strong> ${profileData.fullName}</p>
+    <p><strong>Place:</strong> ${profileData.place}</p>
+    <p><strong>Interested Jobs:</strong> ${profileData.interestedJobs}</p>
+    <p><strong>Email:</strong> ${profileData.email}</p>
+    <p><strong>Phone:</strong> ${profileData.phone}</p>
+    <p><strong>Bio:</strong> ${profileData.bio}</p>
+    <p><strong>Skills:</strong> ${profileData.skills}</p>
+    <p><strong>Experience:</strong> ${profileData.experience}</p>
+    <p><strong>LinkedIn:</strong> <a href="${profileData.linkedin}" target="_blank">${profileData.linkedin}</a></p>
+    <p><strong>GitHub:</strong> <a href="${profileData.github}" target="_blank">${profileData.github}</a></p>
+`;
+
+document.getElementById("edit-profile").addEventListener("click", function() {
+        window.location.href = "flashcard.html";  // Replace 'another-page.html' with your target page
+    });
+    </script>
+</body>
+</html>

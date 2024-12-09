@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #D8C3A5, #A48374); /* Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #3A2D28; /* Dark brown */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    text-align: left;
+    font-size: 1rem;
+    color: #3A2D28;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button {
+    padding: 10px;
+    font-size: 1rem;
+    background: #A48374; /* Muted Brown */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-button:hover {
+    background: #3A2D28; /* Dark brown */
+}
+
+/* SSO Buttons Styling */
+.sso-buttons {
+    margin: 20px 0;
+}
+
+.sso-buttons button {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Google Button */
+.google-button {
+    background: #DB4437; /* Google red */
+    color: #fff;
+}
+
+.google-button:hover {
+    background: #b63427; /* Darker Google red */
+    transform: scale(1.05);
+}
+
+/* LinkedIn Button */
+.linkedin-button {
+    background: #0077B5; /* LinkedIn blue */
+    color: #fff;
+}
+
+.linkedin-button:hover {
+    background: #005983; /* Darker LinkedIn blue */
+    transform: scale(1.05);
+}
+
+/* Email Button */
+.email-button {
+    background: #34A853; /* Green */
+    color: #fff;
+}
+
+.email-button:hover {
+    background: #28843c; /* Darker green */
+    transform: scale(1.05);
+}
+
+
+/* Register Link */
+.register-link p {
+    font-size: 0.9rem;
+    color: #3A2D28;
+}
+
+.register-link a {
+    color: #A48374; /* Muted Brown */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    color: #3A2D28; /* Dark brown */
+    text-decoration: underline;
+}
+
+/* Error Message Styling */
+.error-message {
+    font-size: 0.9rem;
+    color: red;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}

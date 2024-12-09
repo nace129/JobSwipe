@@ -1,0 +1,156 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h1>Create Account</h1>
+            <form id="register-form">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <div id="email-error" class="error-message"></div>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <small id="password-help" class="help-text">
+                    Password must be at least 8 characters long, include an uppercase letter, a number, and a special character.
+                </small>
+                <div id="password-error" class="error-message"></div>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <div id="confirm-password-error" class="error-message"></div>
+                
+                <button type="submit" class="register-button">Register</button>
+            </form>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Log In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/register.js"></script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css">
+
+    <!-- Firebase SDK as Modules -->
+    <script type="module">
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6Clgianf9pp0BJrAuDtU3Z1KflH9OTzk",
+            authDomain: "jobswipe-1b358.firebaseapp.com",
+            projectId: "jobswipe-1b358",
+            storageBucket: "jobswipe-1b358.firebasestorage.app",
+            messagingSenderId: "48978805128",
+            appId: "1:48978805128:web:7b53e4597076c02518fa3d",
+            measurementId: "G-1ED38XB580"
+        };
+
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Handle form submission
+        document.getElementById("register-form").addEventListener("submit", function (event) {
+            event.preventDefault();  // Prevent default form submission
+
+            const fullName = document.getElementById("full-name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            const emailError = document.getElementById("email-error");
+            const passwordError = document.getElementById("password-error");
+            const confirmPasswordError = document.getElementById("confirm-password-error");
+
+            // Clear previous error messages
+            emailError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+
+            // Validate password (e.g., at least 8 characters, special character, number)
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                passwordError.textContent = "Password must be at least 8 characters long, include an uppercase letter, a number, and a special character.";
+                return;
+            }
+
+            // Confirm password match
+            if (password !== confirmPassword) {
+                confirmPasswordError.textContent = "Passwords do not match.";
+                return;
+            }
+
+            // Create a reference for the user's data in Firebase Realtime Database
+            const usersRef = ref(database, 'users/' + email.replace(/\./g, ','));  // Using email as key, replacing dots
+
+            // Store the user's data in Firebase
+            set(usersRef, {
+                fullName: fullName,
+                email: email,
+                password: password
+            }).then(() => {
+                alert("Registration successful!");
+                window.location.href = "profile.html";  // Redirect to login page after successful registration
+            }).catch((error) => {
+                console.error("Error writing to Firebase:", error);
+                alert("Error occurred during registration.");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h1>Create Account</h1>
+            <form id="register-form">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <div id="email-error" class="error-message"></div>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <small id="password-help" class="help-text">
+                    Password must be at least 8 characters long, include an uppercase letter, a number, and a special character.
+                </small>
+                <div id="password-error" class="error-message"></div>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                <div id="confirm-password-error" class="error-message"></div>
+                
+                <button type="submit" class="register-button">Register</button>
+            </form>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Log In</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Creation</title>
+    <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Create Your Profile</h1>
+        <form id="profile-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" placeholder="Enter your city or location" required>
+
+            <label for="interested-jobs">Interested Job Positions:</label>
+            <input type="text" id="interested-jobs" name="interested-jobs" placeholder="e.g., Frontend Developer, Data Scientist">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" placeholder="Tell us about yourself" rows="4"></textarea>
+
+            <label for="skills">Skills:</label>
+            <input type="text" id="skills" name="skills" placeholder="e.g., React, Python">
+
+            <label for="experience">Experience:</label>
+            <input type="text" id="experience" name="experience" placeholder="e.g., 3 years as a software developer">
+
+            <label for="linkedin">LinkedIn:</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/your-profile">
+
+            <label for="github">GitHub:</label>
+            <input type="url" id="github" name="github" placeholder="https://github.com/your-username">
+
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile-picture">
+            
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script src="scripts/profile.js"></script>
+</body>
+</html>

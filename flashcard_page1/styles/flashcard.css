@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #D8C3A5, #A48374);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #3A2D28;
+}
+
+.flashcards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #A48374;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #3A2D28;
+}
+
+.card p {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.card a {
+    color: #A48374;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    color: #3A2D28;
+    text-decoration: underline;
+}
+
+.contact-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    background: #A48374;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #3A2D28;
+}
+
+.contact-info {
+    display: none; /* Initially hidden */
+    margin-top: 15px;
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #3A2D28;
+    transition: color 0.3s ease;
+}
+
+.arrow:hover {
+    color: #A48374;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 0;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 0;
+}
+
+/* Superlike Notification */
+.superlike {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #983f16;
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.superlike.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -40%);
+}
